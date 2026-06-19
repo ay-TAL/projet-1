@@ -3,14 +3,17 @@ exceptions = {"souris": "singulier", "bus": "singulier", "choix": "singulier", "
 termine = ('s','x') 
 
 def mots(word):
+ 
+ word = word.lower()
+ 
  if word in exceptions:
    return('ce mot est au singulier')
  else:
-    if word.endswith(ter):
+    if word.endswith(termine):
      return('ce mot est au pluriel')
     else:
      return('ce mot est au singulier')
   
-res = mots(input('quelle est le mot: '))
+resultat = mots(input('quelle est le mot: '))
 
-print(res)
+print(resultat)
