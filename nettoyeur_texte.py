@@ -1,23 +1,26 @@
 import nltk
 from nltk.corpus import stopwords
 
+mots_inutiles = set(stopwords.words("french"))
 
-def nettoyer_mon_texte(phrase_brute):
-    mots_inutiles = stopwords.words("french")
-    phrase_propre = []
+def nettoyage(phrase):
 
-    mots_decoupes = nltk.word_tokenize(phrase_brute)
+    liste = []
+    mots_a_decouper = phrase.replace("'", " ")
+    phrase_nettoyee = nltk.word_tokenize(mots_a_decouper)
 
-    for word in mots_decoupes:
+    for word in phrase_nettoyee:
         texte = word.lower().strip()
-        if texte not in mots_inutiles:
-            phrase_propre.append(texte)
 
-    return phrase_propre
+        if texte.isalnum() and texte not in mots_inutiles:
+            liste.append(texte)
+
+    return liste
 
 
-texte_test = input("Insérer votre texte à nettoyer : ")
-resultat = nettoyer_mon_texte(texte_test)
+texte_test = input("Insérez votre texte : ")
 
-print("\nRésultat final de votre liste :")
-print(resultat)
+resultat = nettoyage(texte_test)
+
+print("\nLe résultat final de votre liste est :")
+print(resultat)     
