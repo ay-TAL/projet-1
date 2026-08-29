@@ -18,4 +18,4 @@ Ces scripts en Python sont mes tout premiers projets.
 - isole le radical et la terminaison d'un verbe du premier, deuxième et troisième groupe au présent pour en identifier la structure.
 
 ### 6. Nettoyeur de Texte (`nettoyeur_texte.py`)
-- Découpe un texte en mots, élimine les mots vides (*stopwords*) en français, et standardise le résultat en minuscules.
+- Ce petit script sert à faire le tri dans un texte en français. Il prend un fichier, sépare toutes les phrases mot par mot, vire la ponctuation encombrante (comme les apostrophes ou les tirets) et supprime tous les mots "inutiles" du quotidien (les *le, la, de, du, un*...) pour ne garder que les mots importants, le tout proprement mis en minuscules.
