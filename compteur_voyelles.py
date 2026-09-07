@@ -1,6 +1,6 @@
 mot = input("veuiller saisir un mot: ")
 
-liste = ['a','e','i','o','u','y']
+liste = ['a','e','i','o','u','y','é', 'è', 'à']
 
 compteur = 0
 
